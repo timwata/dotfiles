@@ -2,6 +2,8 @@ alias emacs=vim
 export ZSH=${HOME}/dotfiles/zsh
 typeset -U path PATH
 
+export PATH=/usr/local/bin:${PATH}
+
 typeset -U config_files
 config_files=($ZSH/*.zsh)
 
