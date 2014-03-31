@@ -17,9 +17,10 @@ set cmdheight=2
 set number
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set autoindent
 set expandtab
+set shiftwidth=4
 
 autocmd BufWinLeave ?* silent mkview
 autocmd BufWinEnter ?* silent loadview
@@ -27,8 +28,8 @@ autocmd BufWinEnter ?* silent loadview
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set nocompatible
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
@@ -37,9 +38,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 if has('lua')
-  NeoBundle 'Shougo/neocomplete.vim'
+    NeoBundle 'Shougo/neocomplete.vim'
 else
-  NeoBundle 'Shougo/neocomplcache.vim'
+    NeoBundle 'Shougo/neocomplcache.vim'
 endif
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
