@@ -18,12 +18,12 @@ YELLOWGREEN=$'%{\e[38;5;120m%}'
 
 # for check if 256 color is enabled
 function pcolor() {
-  for ((f = 0; f < 255; f++)); do
-    printf "\e[38;5;%dm %3d#\e[m" $f $f
-    if [[ $f%8 -eq 7 ]] then
-      printf "\n"
-    fi
- done
- echo
+    for ((f = 0; f < 255; f++)); do
+        printf "\e[38;5;%dm %3d#\e[m" $f $f
+        if [[ $f%8 -eq 7 ]] then
+            printf "\n"
+        fi
+    done
+    echo
 }
 

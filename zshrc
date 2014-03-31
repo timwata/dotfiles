@@ -9,7 +9,7 @@ source ${ZSH}/alias.zsh
 
 for file in ${${${config_files:#*/alias.zsh}:#*/completion.zsh}:#*/keybind.zsh}
 do
-  source ${file}
+    source ${file}
 done
 
 autoload -U compinit
@@ -20,7 +20,7 @@ source ${ZSH}/keybind.zsh
 
 if [[ -a ~/.local.zsh ]]
 then
-  source ~/.local.zsh
+    source ~/.local.zsh
 fi
 
 unset config_files

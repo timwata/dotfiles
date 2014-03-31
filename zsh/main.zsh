@@ -51,17 +51,17 @@ export SCREENDIR="${HOME}/.screen"
 if [[ -n ${STY} ]];
 then
 
-  preexec_screen() {
-    emulate -L zsh
-    local -a cmd; cmd=(${(z)2})
-    echo -ne "\ek$cmd[1]:t\e\\"
-  }
-  add-zsh-hook preexec preexec_screen
-
-  precmd_screen() {
-    echo -ne "\ek$(basename $PWD)\e\\"
-  }
-  add-zsh-hook precmd precmd_screen
+    preexec_screen() {
+        emulate -L zsh
+        local -a cmd; cmd=(${(z)2})
+        echo -ne "\ek$cmd[1]:t\e\\"
+    }
+    add-zsh-hook preexec preexec_screen
+  
+    precmd_screen() {
+        echo -ne "\ek$(basename $PWD)\e\\"
+    }
+    add-zsh-hook precmd precmd_screen
 
 fi
 
@@ -69,18 +69,18 @@ fi
 # git
 if is-at-least 4.3.7;
 then
-
-  autoload -Uz vcs_info
-  zstyle ':vcs_info:*' formats '[%b] '
-  zstyle ':vcs_info:*' actionformats '[%b|%a] '
-
-  precmd_git () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-  }
-  add-zsh-hook precmd precmd_git
-
+  
+    autoload -Uz vcs_info
+    zstyle ':vcs_info:*' formats '[%b] '
+    zstyle ':vcs_info:*' actionformats '[%b|%a] '
+  
+    precmd_git () {
+        psvar=()
+        LANG=en_US.UTF-8 vcs_info
+        [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    }
+    add-zsh-hook precmd precmd_git
+  
 fi
 
 alias rc=". ${HOME}/.zshrc"

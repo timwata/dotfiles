@@ -17,7 +17,7 @@ setopt complete_aliases
 
 zstyle ':completion:*:sudo:*' command-path ${PATH}
 if [ -n "$LS_COLORS" ]; then
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
 bindkey '^p' history-beginning-search-backward
