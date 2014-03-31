@@ -82,7 +82,3 @@ then
     add-zsh-hook precmd precmd_git
   
 fi
-
-alias rc=". ${HOME}/.zshrc"
-alias ll="ls -l"
-alias sc="screen -U"

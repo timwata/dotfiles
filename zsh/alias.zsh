@@ -12,6 +12,8 @@ function _set_alias {
 
 # reload shell settings
 _set_alias "reload" "exec" "${SHELL} -l"
+_set_alias "ls" "ls" "-l"
+_set_alias "sc" "screen" "-U"
 
 case ${OSTYPE} in
     darwin*)
