@@ -1,0 +1,12 @@
+[submodule "zsh/antigen"]
+	path = zsh/antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "zsh/dircolors-solarized"]
+	path = zsh/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "zsh/LS_COLORS"]
+	path = zsh/LS_COLORS
+	url = https://github.com/trapd00r/LS_COLORS.git
+[submodule "vim/bundle/neobundle.vim"]
+	path = vim/bundle/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim

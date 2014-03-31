@@ -1,0 +1,62 @@
+defscrollback 10000
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+startup_message off
+autodetach on
+bell_msg ""
+bell off
+caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=bu dr}%n %t%{-}%+w"
+sorendition "+rb .G"
+defbce "on"
+term xterm-256color
+termcapinfo xterm* 'Co#256:pa#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
+attrcolor b ".I"
+
+escape ^Tt
+bindkey ^j eval 'command -c OPERATE'
+bind -c OPERATE " " select 0
+bind -c OPERATE 0 select 0
+bind -c OPERATE 1 select 1
+bind -c OPERATE 2 select 2
+bind -c OPERATE 3 select 3
+bind -c OPERATE 4 select 4
+bind -c OPERATE 5 select 5
+bind -c OPERATE 6 select 6
+bind -c OPERATE 7 select 7
+bind -c OPERATE 8 select 8
+bind -c OPERATE 9 select 9
+bind -c OPERATE "\032" command
+bind -c OPERATE ^[ command
+
+bind -c OPERATE ^k eval prev 'command -c OPERATE'
+bind -c OPERATE ^l eval next 'command -c OPERATE'
+
+bind -c OPERATE j eval 'focus down' 'command -c OPERATE'
+bind -c OPERATE k eval 'focus up' 'command -c OPERATE'
+bind -c OPERATE l eval 'focus next' 'command -c OPERATE'
+bind -c OPERATE h eval 'focus prev' 'command -c OPERATE'
+
+bind -c OPERATE J eval 'focus bottom' 'command -c OPERATE'
+bind -c OPERATE K eval 'focus top' 'command -c OPERATE'
+bind -c OPERATE H eval 'focus left' 'command -c OPERATE'
+bind -c OPERATE L eval 'focus right' 'command -c OPERATE'
+
+bind -c OPERATE r eval 'command -c RESIZE'
+bind -c RESIZE "\032" command
+bind -c RESIZE ^[ command
+bind -c RESIZE j eval 'resize -5' 'command -c RESIZE'
+bind -c RESIZE k eval 'resize +5' 'command -c RESIZE'
+bind -c RESIZE h eval 'resize -1' 'command -c RESIZE'
+bind -c RESIZE l eval 'resize +1' 'command -c RESIZE'
+bind -c OPERATE ^r remove
+bind -c OPERATE d  kill
+bind -c OPERATE D eval kill remove
+bind -c OPERATE ^d detach
+bind -c OPERATE s eval split focus 'command -c OPERATE'
+bind -c OPERATE x eval 'split -v' focus 'command -c OPERATE'
+bind -c OPERATE o only
+bind -c OPERATE n screen
+bind -c OPERATE w windowlist
+bind -c OPERATE i copy
+bind -c OPERATE . eval "echo ':source ${HOME}/.screenrc'" "source ${HOME}/.screenrc"
