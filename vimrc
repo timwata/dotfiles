@@ -36,6 +36,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+if has('lua')
+  NeoBundle 'Shougo/neocomplete.vim'
+else
+  NeoBundle 'Shougo/neocomplcache.vim'
+endif
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'w0ng/vim-hybrid'
@@ -43,6 +48,8 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'travitch/hasksyn'
+NeoBundle 'surround.vim'
+NeoBundle 'vim-scripts/Align'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -74,3 +81,23 @@ nnoremap gbb :MBEToggle<CR>
 let g:miniBufExplVSplit = 15
 let g:miniBufExplorerMoreThanOne = 0
 "let g:miniBufExplCloseOnSelect = 1
+
+"
+" neocomp{letecache|ete}
+"
+if has('lua')
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#manual_completion_start_length = 3
+    let g:neocomplete#auto_completion_start_length = 4
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#enable_fuzzy_completion = 1
+else
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_smart_case = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+    let g:neocomplcache_enable_camel_case_completion  =  1
+    let g:neocomplcache_max_list = 20
+    let g:neocomplcache_min_syntax_length = 3
+endif
+
