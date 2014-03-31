@@ -1,4 +1,4 @@
-DOT_FILES = zshrc vimrc vim screenrc Xresources
+DOT_FILES = zshrc vimrc vim screenrc
 
 .PHONY : clean
 
