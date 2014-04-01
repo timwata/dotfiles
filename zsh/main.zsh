@@ -81,4 +81,8 @@ then
     }
     add-zsh-hook precmd precmd_git
   
-fi
+  fi
+  
+function archive() {
+    cd && tar zcvf dotfiles.tgz .vim .antigen dotfiles
+}
