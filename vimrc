@@ -51,6 +51,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'travitch/hasksyn'
 NeoBundle 'surround.vim'
 NeoBundle 'vim-scripts/Align'
+NeoBundle 'othree/eregex.vim'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -70,9 +71,9 @@ let g:lightline.colorscheme = 'wombat'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-nnoremap <silent> uff :<C-u>Unite file<CR>
-nnoremap <silent> ubb :<C-u>Unite buffer<CR>
-nnoremap <silent> umm :<C-u>Unite file_mru<CR>
+nnoremap <silent> <C-k>d :<C-u>Unite file<CR>
+nnoremap <silent> <C-k>f :<C-u>Unite buffer<CR>
+nnoremap <silent> <C-k>m :<C-u>Unite file_mru<CR>
 
 "
 " minibufexpl
@@ -102,3 +103,10 @@ else
     let g:neocomplcache_min_syntax_length = 3
 endif
 
+"
+" eregex
+"
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
