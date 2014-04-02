@@ -10,3 +10,6 @@
 [submodule "vim/bundle/neobundle.vim"]
 	path = vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+[submodule "zsh/k"]
+	path = zsh/k
+	url = https://github.com/supercrabtree/k.git
