@@ -52,6 +52,8 @@ NeoBundle 'travitch/hasksyn'
 NeoBundle 'surround.vim'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'kana/vim-submode'
 
 filetype plugin indent on
 NeoBundleCheck
@@ -71,8 +73,8 @@ let g:lightline.colorscheme = 'wombat'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-nnoremap <silent> <C-k>d :<C-u>Unite file<CR>
-nnoremap <silent> <C-k>f :<C-u>Unite buffer<CR>
+nnoremap <silent> <C-k>f :<C-u>Unite file<CR>
+nnoremap <silent> <C-k>b :<C-u>Unite buffer<CR>
 nnoremap <silent> <C-k>m :<C-u>Unite file_mru<CR>
 
 "
@@ -110,3 +112,38 @@ nnoremap / :M/
 nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
+
+"
+" submode
+"
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
