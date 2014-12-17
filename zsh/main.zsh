@@ -80,9 +80,17 @@ then
         [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
     }
     add-zsh-hook precmd precmd_git
-  
-  fi
-  
+fi
+ 
 function archive() {
     cd && tar zcvf dotfiles.tgz .vim .antigen dotfiles
+}
+
+function dotsync() {
+    if [ $# -ne 1 ]
+    then
+        return
+    fi
+    
+    rsync -av --delete -e 'ssh -c arcfour' ${HOME}/dotfiles $1:dotfiles
 }
