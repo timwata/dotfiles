@@ -44,7 +44,7 @@ function kill-ssh-agent() {
 }
 
 agent=${HOME}/.ssh/auth_sock
-if [[ ! -L "${SSH_AUTH_SOCK}" ]]
+if [ ! -L "${SSH_AUTH_SOCK}" ] && [ "${USER}" != "vagrant" ]
 then
     ln -snf "${SSH_AUTH_SOCK}" $agent
 fi
