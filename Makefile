@@ -1,6 +1,6 @@
 DOT_FILES = zshrc vimrc vim screenrc ghci
 
-.PHONY : all clean
+.PHONY : all clean submodule vim
 
 all   : $(foreach f, $(DOT_FILES), link-dot-file-$(f)) submodule vim 
 clean : $(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
