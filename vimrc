@@ -54,6 +54,7 @@ NeoBundle 'vim-scripts/Align'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'rking/ag.vim'
 
 filetype plugin indent on
 NeoBundleCheck
