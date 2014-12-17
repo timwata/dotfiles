@@ -1,0 +1,37 @@
+#
+# VCS
+#
+.git/
+.hg/
+.svn/
+
+#
+# tmp
+#
+*~
+~*
+*.swp
+.swp.*
+*.tmp
+*.bak
+*.old
+*.log
+.cache/
+*.autosave
+
+#
+# obj, libs
+#
+*.slo
+*.lo
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+
+

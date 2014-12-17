@@ -1,4 +1,4 @@
-DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig
+DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore
 
 .PHONY : all clean submodule vim
 
