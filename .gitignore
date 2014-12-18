@@ -2,6 +2,6 @@ vim/*
 !vim/bundle/neobundle.vim
 *.swp
 rbenv/*
-!rbenv/.gitkeep
+!rbenv/plugins/*
 antigen/*
 !antigen/.gitkeep
