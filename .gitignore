@@ -5,3 +5,5 @@ rbenv/*
 !rbenv/plugins/*
 antigen/*
 !antigen/.gitkeep
+local.zsh
+gitconfig_local
