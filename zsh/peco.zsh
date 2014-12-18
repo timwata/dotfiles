@@ -5,7 +5,7 @@ case ${OSTYPE} in
         ;;
 esac
 
-function peco_select_history() {
+function peco-select-history() {
     local tac
     if which tac > /dev/null; then
       tac="tac"
@@ -17,9 +17,9 @@ function peco_select_history() {
     zle clear-screen
 }
 
-zle -N peco_select_history
+zle -N peco-select-history
 
-function peco_select_screen() {
+function peco-select-screen() {
     local selected_session="$(screen -ls | \
         awk 'NR==1,/^There (is a|are) screens? on:/ { next } /^[0-9]+ Sockets? in/ { exit } 1' | \
         while read session state; do echo "${(r:30:::::)session} ${state}"; done | peco)"
@@ -33,4 +33,4 @@ function peco_select_screen() {
     zle clear-screen
 }
 
-zle -N peco_select_screen
+zle -N peco-select-screen
