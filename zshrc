@@ -7,9 +7,11 @@ export PATH=/usr/local/bin:${PATH}
 typeset -U config_files
 config_files=($ZSH/*.zsh)
 
+source ${ZSH}/color.zsh
 source ${ZSH}/alias.zsh
+source ${ZSH}/main.zsh
 
-for file in ${${${config_files:#*/alias.zsh}:#*/completion.zsh}:#*/keybind.zsh}
+for file in ${config_files:#*/(alias|completion|keybind|main|color).zsh}
 do
     source ${file}
 done
