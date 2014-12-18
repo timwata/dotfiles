@@ -5,7 +5,6 @@ DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_
 all: gitconfig_local local.zsh  $(foreach f, $(DOT_FILES), link-dot-file-$(f)) 
 	git submodule init
 	git submodule update
-	vim -c "try | NeoBundleInstall | finally | qall! | endtry"
 
 gitconfig_local:
 	touch gitconfig_local
