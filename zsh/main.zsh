@@ -93,5 +93,4 @@ function dotsync() {
     fi
     
     rsync -av --delete -e 'ssh -c arcfour' ${HOME}/dotfiles/ $1:dotfiles
-    ssh $1 'cd dotfiles && make'
 }
