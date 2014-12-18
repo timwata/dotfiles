@@ -12,7 +12,8 @@ function peco-select-history() {
     else
       tac="tail -r"
     fi
-    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER" 2 > /dev/null)
     CURSOR=$#BUFFER
     zle clear-screen
 }
@@ -22,15 +23,14 @@ zle -N peco-select-history
 function peco-select-screen() {
     local selected_session="$(screen -ls | \
         awk 'NR==1,/^There (is a|are) screens? on:/ { next } /^[0-9]+ Sockets? in/ { exit } 1' | \
-        while read session state; do echo "${(r:30:::::)session} ${state}"; done | peco)"
+        while read session state; do echo "${(r:30:::::)session} ${state}"; done | peco 2 > /dev/null)"
 
-    if [ ${selected_session} != "" ]
+    if [[ "${selected_session}" =~ "^[0-9]" ]]
     then
         BUFFER="screen -rx $(echo ${selected_session} | cut -d ' ' -f1)"
         zle accept-line
+        zle clear-screen
     fi
-
-    zle clear-screen
 }
 
 zle -N peco-select-screen
