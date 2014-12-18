@@ -3,7 +3,6 @@
 
 # misc
 export TERM=xterm-256color
-export SHELL=$(which zsh)
 export EDITOR=vim
 setopt auto_pushd
 setopt append_history

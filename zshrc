@@ -1,4 +1,5 @@
 alias emacs=vim
+export SHELL=$(which zsh)
 export ZSH=${HOME}/dotfiles/zsh
 typeset -U path PATH
 
