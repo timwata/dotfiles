@@ -5,6 +5,22 @@ typeset -U path PATH
 
 export PATH=/usr/local/bin:${PATH}
 
+
+case ${OSTYPE} in
+    darwin*)
+        if [ ! -f $(which brew) ]
+        then
+            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
+        if [ ! -f $(which ag) ]
+        then
+            brew install ag
+        fi
+        ;;
+    linux*)
+        ;;
+esac
+
 typeset -U config_files
 config_files=($ZSH/*.zsh)
 

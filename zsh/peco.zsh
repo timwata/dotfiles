@@ -1,5 +1,10 @@
 case ${OSTYPE} in
     darwin*)
+        if [ ! -f $(which peco) ]
+        then
+            brew tap peco/peco
+            brew install peco
+        fi
         ;;
     linux*)
         ;;
