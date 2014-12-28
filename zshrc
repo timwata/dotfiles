@@ -30,4 +30,9 @@ fi
 
 unset config_files
 
+if [ -d ${HOME}/bin ]
+then
+    export PATH=${HOME}/bin:${PATH}
+fi
+
 # vim: ts=4:sw=4:expandtab
