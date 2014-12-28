@@ -7,6 +7,8 @@ function _set_alias {
     if [ $? -eq 0 ]
     then
         alias ${als}="${cmd} ${opt}"
+    else
+        echo "[WARN] failed 'alias ${als}=${cmd} ${opt}'"
     fi
 }
 
@@ -18,8 +20,9 @@ _set_alias "ssh" "ssh" "-A"
 
 case ${OSTYPE} in
     darwin*)
-        _set_alias "dircolors" "gdircolors"
-        _set_alias "ls" "gls" "--color=auto"
+        coreutils_dir=$(brew --prefix coreutils)/libexec/gnubin
+        _set_alias "dircolors" "${coreutils_dir}/dircolors"
+        _set_alias "ls" "${coreutils_dir}/ls" "--color=auto"
         ;;
     linux*)
         _set_alias "ls" "ls" "--color=auto"
