@@ -8,14 +8,29 @@ export PATH=/usr/local/bin:${PATH}
 
 case ${OSTYPE} in
     darwin*)
-        if [ ! -f $(which brew) ]
-        then
+        type brew > /dev/null 2>&1 || {
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        fi
-        if [ ! -f $(which ag) ]
-        then
+            brew update
+            brew install caskroom/cask/brew-cask
+        }
+        type ag > /dev/null 2>&1 || {
             brew install ag
-        fi
+        }
+        type peco > /dev/null 2>&1 || {
+            brew tap peco/peco
+            brew install peco
+        }
+        type VBoxManage > /dev/null 2>&1 || {
+            brew cask install virtualbox
+        }
+        type packer > /dev/null 2>&1 || {
+            brew tap homebrew/binary
+            brew install packer
+        }
+        type vagrant > /dev/null 2>&1 || {
+            brew cask install vagrant
+            brew cask install vagrant-manager
+        }
         ;;
     linux*)
         ;;

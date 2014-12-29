@@ -1,4 +1,4 @@
-DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_local local.zsh peco anyenv
+DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_local local.zsh peco anyenv vagrant.d
 
 .PHONY : all clean submodule vim
 

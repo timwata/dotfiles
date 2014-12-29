@@ -1,15 +1,3 @@
-case ${OSTYPE} in
-    darwin*)
-        if [ ! -f $(which peco) ]
-        then
-            brew tap peco/peco
-            brew install peco
-        fi
-        ;;
-    linux*)
-        ;;
-esac
-
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
