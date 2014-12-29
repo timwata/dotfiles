@@ -1,6 +1,6 @@
 DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_local local.zsh peco anyenv vagrant.d
 
-.PHONY : all clean submodule vim
+.PHONY : all clean 
 
 all: gitconfig_local local.zsh  $(foreach f, $(DOT_FILES), link-dot-file-$(f)) 
 	git submodule init
