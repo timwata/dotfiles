@@ -1,10 +1,14 @@
 DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_local local.zsh peco anyenv vagrant.d
 
-.PHONY : all clean 
+.PHONY : all centos7 clean 
 
 all: gitconfig_local local.zsh  $(foreach f, $(DOT_FILES), link-dot-file-$(f)) 
 	git submodule init
 	git submodule update
+
+centos7:
+	sudo yum install -y epel-release 
+	sudo yum install -y the_silver_searcher
 
 gitconfig_local:
 	touch gitconfig_local

@@ -1,10 +1,16 @@
+# vim: ts=4:sw=4:expandtab
 alias emacs=vim
+
 export SHELL=$(which zsh)
 export ZSH=${HOME}/dotfiles/zsh
+
 typeset -U path PATH
 
 export PATH=/usr/local/bin:${PATH}
-
+if [ -d ${HOME}/bin ]
+then
+    export PATH=${HOME}/bin:${PATH}
+fi
 
 case ${OSTYPE} in
     darwin*)
@@ -61,9 +67,3 @@ fi
 
 unset config_files
 
-if [ -d ${HOME}/bin ]
-then
-    export PATH=${HOME}/bin:${PATH}
-fi
-
-# vim: ts=4:sw=4:expandtab
