@@ -8,5 +8,5 @@
 /local.zsh
 /gitconfig_local
 *.swp
-!/vagrant.d/*
-/vagrant.d/Vagrantfile
+/vagrant.d/*
+!/vagrant.d/Vagrantfile

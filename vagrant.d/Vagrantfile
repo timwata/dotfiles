@@ -1,0 +1,11 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+    # https://github.com/timwata/packer-templates
+    config.vm.define :main do |c|
+        c.vm.box = "timwata/centos.7u0.1406"
+    end
+
+end
