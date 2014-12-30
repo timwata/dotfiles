@@ -16,6 +16,10 @@ Vagrant.configure(2) do |config|
              rm -rf peco_linux_amd64
              yum update -y
         SCRIPT
+
+        c.vm.provider "virtualbox" do |vb|
+            vb.customize ["modifyvm", :id, "--memory", "1536"]
+        end
     end
 
 end
