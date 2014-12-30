@@ -165,3 +165,4 @@ autocmd FileType mkd nnoremap <silent> <C-p> :PrevimOpen<CR>
 " finalize
 "
 filetype plugin indent on
+syntax on
