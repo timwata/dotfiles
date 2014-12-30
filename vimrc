@@ -1,4 +1,6 @@
-syntax on
+filetype off
+filetype plugin indent off
+
 set hidden
 set wildmenu
 set showcmd
@@ -6,7 +8,6 @@ set hlsearch
 set ignorecase
 set smartcase
 set backspace=indent,eol,start
-set autoindent
 set nostartofline
 set ruler
 set laststatus=2
@@ -55,8 +56,11 @@ NeoBundle 'othree/eregex.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
-filetype plugin indent on
 NeoBundleCheck
 
 "
@@ -148,3 +152,16 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+
+"
+" markdown
+"
+let g:vim_markdown_folding_disabled=1
+autocmd FileType mkd nnoremap <silent> <C-p> :PrevimOpen<CR>
+
+
+"
+" finalize
+"
+filetype plugin indent on
