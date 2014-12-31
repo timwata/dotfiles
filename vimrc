@@ -23,8 +23,8 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
-autocmd BufWinLeave ?* silent mkview
-autocmd BufWinEnter ?* silent loadview
+"autocmd BufWinLeave ?* silent mkview
+"autocmd BufWinEnter ?* silent loadview
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
@@ -60,6 +60,18 @@ NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \     'windows' : 'tools\\update-dll-mingw',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'linux' : 'make',
+            \     'unix' : 'gmake',
+            \    },
+            \ }
+NeoBundle "osyo-manga/unite-quickfix"
+NeoBundle "osyo-manga/shabadou.vim"
 
 NeoBundleCheck
 
@@ -160,6 +172,25 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 let g:vim_markdown_folding_disabled=1
 autocmd FileType mkd nnoremap <silent> <C-p> :PrevimOpen<CR>
 
+"
+" quickrun
+"
+let g:quickrun_config = {
+\   "_" : {
+\       "hook/close_quickfix/enable_hook_loaded" : 1,
+\       "hook/close_quickfix/enable_success" : 1,
+\       "hook/close_buffer/enable_failure" : 1,
+\       "hook/close_buffer/enable_empty_data" : 1,
+\       "outputter" : "multi:buffer:quickfix",
+\       "hook/shabadoubi_touch_henshin/enable" : 1,
+\       "hook/shabadoubi_touch_henshin/wait" : 20,
+\       "outputter/buffer/split" : ":botright 8sp",
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 40,
+\   }
+\}
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+nnoremap <silent> rr :QuickRun<CR>
 
 "
 " finalize
