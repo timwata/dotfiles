@@ -46,7 +46,6 @@ endif
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'travitch/hasksyn'
@@ -72,6 +71,7 @@ NeoBundle 'Shougo/vimproc.vim', {
             \ }
 NeoBundle "osyo-manga/unite-quickfix"
 NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle "ap/vim-buftabline"
 
 NeoBundleCheck
 
@@ -94,14 +94,6 @@ nnoremap <silent> <C-k>f :<C-u>Unite file<CR>
 nnoremap <silent> <C-k>b :<C-u>Unite buffer<CR>
 nnoremap <silent> <C-k>m :<C-u>Unite file_mru<CR>
 
-"
-" minibufexpl
-" 
-nnoremap gbb :MBEToggle<CR>
-"nnoremap gbg :MiniBufExplorer<CR>
-let g:miniBufExplVSplit = 15
-let g:miniBufExplorerMoreThanOne = 0
-"let g:miniBufExplCloseOnSelect = 1
 
 "
 " neocomp{letecache|ete}
@@ -122,6 +114,7 @@ else
     let g:neocomplcache_min_syntax_length = 3
 endif
 
+
 "
 " eregex
 "
@@ -129,6 +122,7 @@ nnoremap / :M/
 nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
+
 
 "
 " submode
@@ -172,6 +166,7 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 let g:vim_markdown_folding_disabled=1
 autocmd FileType mkd nnoremap <silent> <C-p> :PrevimOpen<CR>
 
+
 "
 " quickrun
 "
@@ -191,6 +186,15 @@ let g:quickrun_config = {
 \}
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 nnoremap <silent> rr :QuickRun<CR>
+
+
+"
+" vim-buftabline
+"
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
 
 "
 " finalize
