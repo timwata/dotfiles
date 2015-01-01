@@ -25,6 +25,12 @@ set shiftwidth=4
 
 "autocmd BufWinLeave ?* silent mkview
 "autocmd BufWinEnter ?* silent loadview
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
 
 map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
@@ -72,6 +78,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle "osyo-manga/unite-quickfix"
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "ap/vim-buftabline"
+NeoBundle "tpope/vim-endwise"
+NeoBundle "tomtom/tcomment_vim"
 
 NeoBundleCheck
 
