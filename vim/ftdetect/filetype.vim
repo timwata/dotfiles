@@ -42,3 +42,9 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+"
+" quickfix
+"
+au FileType qf nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType qf inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
