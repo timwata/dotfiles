@@ -1,6 +1,7 @@
 /vim/*
 !/vim/bundle/neobundle.vim
 !/vim/ftdetect/
+!/vim/template/
 /rbenv/*
 !/rbenv/plugins/*
 /antigen/*
