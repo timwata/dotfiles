@@ -212,6 +212,11 @@ let g:indentLine_faster = 1
 
 
 "
+" fugitive
+"
+
+
+"
 " finalize
 "
 filetype plugin indent on
