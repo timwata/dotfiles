@@ -192,8 +192,8 @@ nnoremap <silent> rr :QuickRun<CR>
 " vim-buftabline
 "
 set hidden
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <tab> :bnext<CR>
+nnoremap <S-tab> :bprev<CR>
 
 
 "
