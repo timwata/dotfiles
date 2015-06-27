@@ -80,7 +80,6 @@ NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "ap/vim-buftabline"
 NeoBundle "tpope/vim-endwise"
 NeoBundle "tomtom/tcomment_vim"
-NeoBundle "Yggdroot/indentLine"
 NeoBundle "tpope/vim-fugitive"
 
 NeoBundleCheck
