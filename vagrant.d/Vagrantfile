@@ -5,13 +5,14 @@ Vagrant.configure(2) do |config|
 
     # https://github.com/timwata/packer-templates
     config.vm.define :main do |c|
-        c.vm.box = "timwata/centos.7u0.1406"
+        c.vm.box = "timwata/centos.7u0.1503"
         c.vm.provision :shell, :inline => <<-SCRIPT
              pushd /home/vagrant
              su vagrant sh -c 'git clone --recursive https://github.com/timwata/dotfiles.git'
              su vagrant sh -c 'cd /home/vagrant/dotfiles && make'
              pushd /tmp
-             curl -s -L https://github.com/peco/peco/releases/download/v0.2.11/peco_linux_amd64.tar.gz | tar zxv
+             PECO_VER=$(curl -sI https://github.com/peco/peco/releases/latest | awk -F'/' '/^Location:/{print $NF}' | tr -d '\r')
+             curl -s -L https://github.com/peco/peco/releases/download/${PECO_VER}/peco_linux_amd64.tar.gz | tar zxv
              install peco_linux_amd64/peco /usr/local/bin/peco
              rm -rf peco_linux_amd64
              yum update -y
