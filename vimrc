@@ -89,6 +89,7 @@ NeoBundleCheck
 " 
 set t_Co=256
 set cursorline
+set background=dark
 colorscheme hybrid
 let g:lightline = {}
 let g:lightline.colorscheme = 'wombat'
