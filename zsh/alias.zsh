@@ -20,9 +20,9 @@ _set_alias "ssh" "ssh" "-A"
 
 case ${OSTYPE} in
     darwin*)
-        coreutils_dir=$(brew --prefix coreutils)/libexec/gnubin
-        _set_alias "dircolors" "${coreutils_dir}/dircolors"
-        _set_alias "ls" "${coreutils_dir}/ls" "--color=auto"
+        coreutils_dir=$(brew --prefix coreutils)/bin
+        _set_alias "dircolors" "${coreutils_dir}/gdircolors"
+        _set_alias "ls" "${coreutils_dir}/gls" "--color=auto"
         ;;
     linux*)
         _set_alias "ls" "ls" "--color=auto"
