@@ -42,6 +42,14 @@ case ${OSTYPE} in
             install -m 0555 peco_linux_amd64/peco ${HOME}/bin/peco
             rm -rf peco_linux_amd64
         }
+        type ghq > /dev/null 2>&1 || {
+            GHQ_LATEST=$(curl -sI https://github.com/motemen/ghq/releases/latest | grep '^Location' | cut -d\/ -f8 | tr -d '\r')
+            curl -L "https://github.com/motemen/ghq/releases/download/${GHQ_LATEST}/ghq_linux_amd64.zip" -o ghq.zip
+            unzip ghq.zip -d ghq_linux_amd64
+            mkdir -p ${HOME}/bin
+            install -m 0555 ghq_linux_amd64/ghq ${HOME}/bin/ghq
+            rm -rf ghq_linux_amd64 ghq.zip
+        }
         ;;
 esac
 
