@@ -68,6 +68,8 @@ done
 autoload -U compinit
 compinit
 
+autoload -Uz zmv
+
 source ${ZSH}/completion.zsh
 source ${ZSH}/keybind.zsh
 
