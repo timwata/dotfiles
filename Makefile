@@ -1,4 +1,4 @@
-DOT_FILES = zshrc vimrc vim screenrc ghci gitconfig gitignore antigen gitconfig_local local.zsh peco vagrant.d
+DOT_FILES = zshrc vimrc vim screenrc gitconfig gitignore antigen gitconfig_local local.zsh peco vagrant.d
 
 .PHONY : all centos7 clean 
 
