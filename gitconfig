@@ -28,3 +28,6 @@
 
 [include]
     path = ~/.gitconfig_local
+
+[ghq]
+    root = ~/src
